@@ -1,0 +1,177 @@
+/* =============================================
+   CAMPO ARGENTINO — Estilos globales
+   ============================================= */
+
+:root {
+  --color-bg:           #f7f4ef;
+  --color-surface:      #ffffff;
+  --color-surface2:     #eee9e0;
+  --color-border:       #d8cfc2;
+  --color-accent:       #4a7c3f;
+  --color-accent-dark:  #35602e;
+  --color-accent2:      #c8841a;
+  --color-text:         #1f2419;
+  --color-text-muted:   #7a7060;
+  --font-display:       'Playfair Display', Georgia, serif;
+  --font-body:          'Lato', sans-serif;
+  --transition:         0.3s ease;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-weight: 300;
+  line-height: 1.75;
+  overflow-x: hidden;
+}
+
+a { color: var(--color-accent); text-decoration: none; transition: color var(--transition); }
+a:hover { color: var(--color-accent-dark); }
+img { display: block; max-width: 100%; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.25; }
+
+/* ── Botones globales ── */
+.cv-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  background: var(--color-accent);
+  color: #fff;
+  border: 2px solid var(--color-accent);
+  border-radius: 50px;
+  padding: 0.8rem 2rem;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background var(--transition), border-color var(--transition),
+              transform var(--transition), box-shadow var(--transition);
+}
+.cv-btn:hover {
+  background: var(--color-accent-dark);
+  border-color: var(--color-accent-dark);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(74, 124, 63, 0.3);
+}
+.cv-btn:active { transform: translateY(0); }
+
+.cv-btn--outline {
+  background: transparent;
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+.cv-btn--outline:hover {
+  background: var(--color-accent);
+  color: #fff;
+  border-color: var(--color-accent);
+}
+
+/* ── Cards de servicios (usadas en Home y Servicios) ── */
+.cv-home-card {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 12px;
+  text-decoration: none;
+  color: inherit;
+  min-height: 260px;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.cv-home-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.2);
+  color: inherit;
+}
+.cv-home-card--featured {
+  grid-column: span 2;
+  min-height: 360px;
+}
+
+/* ── Responsive para grids de servicios ── */
+@media (max-width: 900px) {
+  .cv-home-servicios__grid,
+  .cv-servicios-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .cv-home-card--featured {
+    grid-column: span 2;
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 600px) {
+  .cv-home-servicios__grid,
+  .cv-servicios-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .cv-home-card--featured {
+    grid-column: span 1 !important;
+    min-height: 240px;
+  }
+  .cv-home-card {
+    min-height: 220px;
+  }
+}
+.cv-home-card__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.cv-home-card:hover .cv-home-card__img { transform: scale(1.06); }
+.cv-home-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10,25,8,0.85) 0%, rgba(10,25,8,0.1) 60%);
+  transition: background var(--transition);
+}
+.cv-home-card:hover .cv-home-card__overlay {
+  background: linear-gradient(to top, rgba(10,25,8,0.9) 0%, rgba(10,25,8,0.2) 60%);
+}
+.cv-home-card__content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  z-index: 2;
+}
+.cv-home-card__category {
+  display: inline-block;
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #a8d5a2;
+  margin-bottom: 0.4rem;
+}
+.cv-home-card__title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: #fff;
+  margin-bottom: 0.4rem;
+}
+.cv-home-card--featured .cv-home-card__title { font-size: 1.7rem; }
+.cv-home-card__description {
+  font-size: 0.83rem;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.55;
+  margin-bottom: 0.8rem;
+  max-width: 480px;
+}
+.cv-home-card__cta {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #a8d5a2;
+  letter-spacing: 0.05em;
+}

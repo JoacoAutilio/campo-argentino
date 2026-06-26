@@ -1,0 +1,30 @@
+/* Siembra.css */
+
+.cv-siembra-page {
+  padding-top: 80px;
+  min-height: 100vh;
+  background: var(--color-bg);
+  padding-bottom: 5rem;
+}
+
+.cv-cultivos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.2rem;
+  margin-bottom: 2.5rem;
+}
+
+@media (max-width: 600px) {
+  .cv-cultivos-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cv-cultivo-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+.cv-cultivo-link:hover { color: inherit; }
+
+.cv-siembra-back { margin-top: 1rem; }
