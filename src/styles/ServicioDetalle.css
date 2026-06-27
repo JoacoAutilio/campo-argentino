@@ -8,17 +8,32 @@
 }
 .cv-detalle-hero {
   position: relative;
-  height: 70vh;
-  min-height: 450px;
+  height: 55vh;
+  min-height: 300px;
   overflow: hidden;
   border-radius: 0 0 24px 24px;
 }
 .cv-detalle-hero__img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center 60%;
+  object-fit: contain;
+  object-position: center center;
+  background: #1a2a15;
   display: block;
+}
+
+@media (max-width: 600px) {
+  .cv-detalle-hero {
+    height: auto;
+    min-height: unset;
+  }
+  .cv-detalle-hero__img {
+    height: auto;
+    max-height: 280px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
 }
 .cv-detalle-hero__overlay {
   position: absolute; inset: 0;
