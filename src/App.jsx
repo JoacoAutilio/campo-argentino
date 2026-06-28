@@ -15,6 +15,7 @@ export const cultivosData = [
   {
     id: 'soja',
     title: 'Soja',
+    imagePosition: 'center center',
     category: 'Oleaginosas',
     description: 'Asesoramiento técnico en siembra directa, densidades y variedades para la región pampeana.',
     detalle: 'Trabajamos con productores de soja en todo el ciclo del cultivo: análisis de suelo, elección de variedad, densidad de siembra, manejo de malezas y enfermedades, y seguimiento fenológico. Nuestro equipo aplica tecnología de precisión para maximizar el rendimiento por hectárea.',
@@ -23,6 +24,7 @@ export const cultivosData = [
   {
     id: 'maiz',
     title: 'Maíz',
+    imagePosition: 'center center',
     category: 'Cereales',
     description: 'Planificación de lotes, híbridos de alta rinde y manejo de plagas y enfermedades.',
     detalle: 'El maíz requiere una planificación cuidadosa desde la elección del híbrido hasta la cosecha. Asesoramos en nutrición, densidad de siembra, manejo de plagas como el gusano cogollero y optimización del riego para lograr los mejores rendimientos.',
@@ -31,6 +33,7 @@ export const cultivosData = [
   {
     id: 'girasol',
     title: 'Girasol',
+    imagePosition: 'center 40%',
     category: 'Oleaginosas',
     description: 'Cultivos de alta rentabilidad con seguimiento satelital de lotes y humedad de suelo.',
     detalle: 'El girasol es uno de los cultivos más rentables de la pampa húmeda. Brindamos asesoramiento en selección de híbridos, fechas de siembra óptimas, manejo de Sclerotinia y seguimiento satelital continuo de los lotes para decisiones oportunas.',
@@ -39,6 +42,7 @@ export const cultivosData = [
   {
     id: 'trigo',
     title: 'Trigo',
+    imagePosition: 'center center',
     category: 'Cereales',
     description: 'Cultivo de invierno con análisis de suelo, nutrición y seguimiento fenológico completo.',
     detalle: 'El trigo es la columna vertebral de la rotación agrícola argentina. Asesoramos en la elección de cultivares, nutrición nitrogenada, control de enfermedades fúngicas y manejo del rinde para obtener granos de alta calidad comercial.',
@@ -51,6 +55,7 @@ export const serviciosData = [
   {
     id: 'siembra',
     title: 'Siembra',
+    imagePosition: 'center center',
     category: 'Servicios',
     description: 'Servicio de siembra directa con equipos de última generación y monitoreo en tiempo real.',
     detalle: 'Contamos con sembradoras de precisión para siembra directa en distintos tipos de suelo. Realizamos la planificación del lote, calibración de la sembradora y seguimiento post-siembra para asegurar una implantación uniforme del cultivo.',
@@ -60,6 +65,7 @@ export const serviciosData = [
   {
     id: 'cosecha',
     title: 'Cosecha',
+    imagePosition: 'center 40%',
     category: 'Servicios',
     description: 'Cosecha eficiente con maquinaria de alta capacidad para minimizar pérdidas y maximizar rendimiento.',
     detalle: 'Disponemos de cosechadoras de alta capacidad con sistema de monitoreo de pérdidas y mapas de rendimiento. Coordinamos la logística de cosecha para reducir tiempos y garantizar la calidad del grano.',
@@ -69,6 +75,7 @@ export const serviciosData = [
   {
     id: 'ganaderia',
     title: 'Ganadería',
+    imagePosition: 'center center',
     category: 'Servicios',
     description: 'Gestión de hacienda, pasturas naturales y sistemas de feedlot para la Pampa Húmeda.',
     detalle: 'Asesoramos en la gestión integral de rodeos bovinos: sanidad animal, manejo de pasturas, suplementación estratégica y sistemas de engorde a corral. Trabajamos con productores criadores, invernadores y tamberos.',
@@ -78,6 +85,7 @@ export const serviciosData = [
   {
     id: 'fumigacion',
     title: 'Fumigación',
+    imagePosition: 'center center',
     category: 'Servicios',
     description: 'Aplicación terrestre y aérea de fitosanitarios con tecnología de precisión y mínimo impacto ambiental.',
     detalle: 'Contamos con dos modalidades de aplicación de fitosanitarios para adaptarnos a cada lote y necesidad del productor.',
@@ -103,6 +111,7 @@ export const serviciosData = [
   {
     id: 'agricultura-de-precision',
     title: 'Agricultura de precisión',
+    imagePosition: 'center 70%',
     category: 'Tecnología',
     description: 'Drones, sensores remotos y mapas de rendimiento para decisiones basadas en datos.',
     detalle: 'Implementamos tecnologías de agricultura de precisión: NDVI satelital, sensores de humedad, mapas de rendimiento y prescripciones de insumos variables. Transformamos los datos del campo en decisiones concretas que mejoran la rentabilidad.',

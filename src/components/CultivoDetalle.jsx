@@ -22,7 +22,7 @@ function CultivoDetalle({ cultivos }) {
   return (
     <main className="cv-detalle-page">
       <div className="cv-detalle-hero">
-        <img src={cultivo.image} alt={cultivo.title} className="cv-detalle-hero__img" />
+        <img src={cultivo.image} alt={cultivo.title} className="cv-detalle-hero__img" style={cultivo.imagePosition ? { objectPosition: cultivo.imagePosition } : {}} />
         <div className="cv-detalle-hero__overlay" />
         <div className="cv-detalle-hero__content">
           <span className="cv-detalle-hero__category">{cultivo.category}</span>

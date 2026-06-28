@@ -52,7 +52,7 @@ function ServicioDetalle({ servicios }) {
     return (
       <main className="cv-detalle-page">
         <div className="cv-detalle-hero">
-          <img src={servicio.image} alt={servicio.title} className="cv-detalle-hero__img" />
+          <img src={servicio.image} alt={servicio.title} className="cv-detalle-hero__img" style={servicio.imagePosition ? { objectPosition: servicio.imagePosition } : {}} />
           <div className="cv-detalle-hero__overlay" />
           <div className="cv-detalle-hero__content">
             <span className="cv-detalle-hero__category">{servicio.category}</span>
