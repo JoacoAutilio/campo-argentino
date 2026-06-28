@@ -106,7 +106,7 @@ function Contact() {
                 onChange={handleChange}
               >
                 <option value="">Seleccioná una actividad</option>
-                {['Agricultura extensiva','Ganadería','Tambo','Horticultura','Fruticultura','Mixta'].map(
+                {['Ganadería','Cosecha','Siembra','Fumigación','Agricultura de precisión'].map(
                   (act) => <option key={act} value={act}>{act}</option>
                 )}
               </select>
