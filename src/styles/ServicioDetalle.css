@@ -6,6 +6,12 @@
   background: var(--color-bg);
   padding-bottom: 5rem;
 }
+
+/* ── Desktop: hero full width ── */
+.cv-detalle-card {
+  width: 100%;
+}
+
 .cv-detalle-hero {
   position: relative;
   height: 55vh;
@@ -18,22 +24,7 @@
   height: 100%;
   object-fit: cover;
   object-position: center center;
-  
   display: block;
-}
-
-@media (max-width: 600px) {
-  .cv-detalle-hero {
-    height: auto;
-    min-height: unset;
-  }
-  .cv-detalle-hero__img {
-    height: auto;
-    max-height: 280px;
-    width: 100%;
-    object-fit: cover;
-    object-position: center center;
-  }
 }
 .cv-detalle-hero__overlay {
   position: absolute; inset: 0;
@@ -66,12 +57,31 @@
   box-shadow: 0 8px 40px rgba(74, 124, 63, 0.08);
 }
 
+/* ── Mobile: imagen y card del mismo ancho, unidos ── */
 @media (max-width: 600px) {
+  .cv-detalle-page {
+    padding-bottom: 3rem;
+  }
+  .cv-detalle-card {
+    margin: 1rem;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(74, 124, 63, 0.12);
+  }
+  .cv-detalle-hero {
+    height: 220px;
+    min-height: unset;
+    border-radius: 0;
+  }
+  .cv-detalle-hero__img {
+    height: 220px;
+    object-position: center center;
+  }
   .cv-detalle-body {
-    padding: 1.5rem 1.2rem;
-    margin: 1rem 0 0;
+    margin: 0;
     border-radius: 0;
     box-shadow: none;
+    max-width: 100%;
   }
 }
 
@@ -84,7 +94,6 @@
 .cv-detalle-actions {
   display: flex; gap: 1rem; flex-wrap: wrap;
 }
-
 @media (max-width: 480px) {
   .cv-detalle-actions { flex-direction: column; }
   .cv-detalle-actions .cv-btn { width: 100%; justify-content: center; }
@@ -103,7 +112,6 @@
 @media (max-width: 600px) {
   .cv-subservicios-grid { grid-template-columns: 1fr; }
 }
-
 .cv-subservicio-card {
   display: block; border-radius: 16px; overflow: hidden;
   text-decoration: none; color: inherit;
