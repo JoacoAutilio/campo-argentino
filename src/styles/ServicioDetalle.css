@@ -63,8 +63,8 @@
     padding-bottom: 3rem;
   }
   .cv-detalle-card {
-    margin: 1rem;
-    border-radius: 20px;
+    margin: 0;
+    border-radius: 0;
     overflow: hidden;
     box-shadow: 0 8px 32px rgba(74, 124, 63, 0.12);
   }
