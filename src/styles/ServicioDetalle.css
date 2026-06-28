@@ -27,7 +27,7 @@
     height: auto;
     min-height: unset;
     border-radius: 0;
-    margin: 0 1rem;
+    margin: 0;
   }
   .cv-detalle-hero__img {
     width: 100%;
@@ -74,6 +74,7 @@
     margin: 0;
     border-radius: 0 0 20px 20px;
     box-shadow: 0 8px 24px rgba(74, 124, 63, 0.1);
+    max-width: 100%;
   }
 }
 
