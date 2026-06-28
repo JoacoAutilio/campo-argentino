@@ -52,12 +52,6 @@ function Gallery({ title, images }) {
         >
           <button className="cv-lightbox__close" onClick={closeLightbox} aria-label="Cerrar">✕</button>
 
-          <button
-            className="cv-lightbox__nav cv-lightbox__nav--prev"
-            onClick={(e) => { e.stopPropagation(); goTo(-1) }}
-            aria-label="Anterior"
-          >‹</button>
-
           <img
             src={images[activeIndex].url}
             alt={images[activeIndex].alt}
@@ -65,13 +59,19 @@ function Gallery({ title, images }) {
             onClick={(e) => e.stopPropagation()}
           />
 
-          <button
-            className="cv-lightbox__nav cv-lightbox__nav--next"
-            onClick={(e) => { e.stopPropagation(); goTo(1) }}
-            aria-label="Siguiente"
-          >›</button>
-
-          <p className="cv-lightbox__caption">{images[activeIndex].alt}</p>
+          <div className="cv-lightbox__controls" onClick={(e) => e.stopPropagation()}>
+            <button
+              className="cv-lightbox__nav cv-lightbox__nav--prev"
+              onClick={(e) => { e.stopPropagation(); goTo(-1) }}
+              aria-label="Anterior"
+            >‹</button>
+            <p className="cv-lightbox__caption">{images[activeIndex].alt}</p>
+            <button
+              className="cv-lightbox__nav cv-lightbox__nav--next"
+              onClick={(e) => { e.stopPropagation(); goTo(1) }}
+              aria-label="Siguiente"
+            >›</button>
+          </div>
         </div>
       )}
     </main>
