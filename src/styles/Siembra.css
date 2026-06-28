@@ -34,6 +34,10 @@
   .cv-siembra-page {
     overflow-x: hidden;
   }
+  .cv-siembra-page .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
   .cv-cultivos-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -41,6 +45,7 @@
   .cv-cultivo-link {
     margin: 0;
     width: 100%;
+    display: block;
   }
   .cv-cultivo-link .cv-card {
     border-radius: 20px;
