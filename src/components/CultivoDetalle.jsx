@@ -4,7 +4,6 @@ import '../styles/ServicioDetalle.css'
 
 // muestra el detalle de un cultivo dentro de siembra
 function CultivoDetalle({ cultivos }) {
-  // obtengo el id del cultivo de la URL
   const { cultivoId } = useParams()
   const cultivo = cultivos.find((c) => c.id === cultivoId)
 
@@ -21,16 +20,16 @@ function CultivoDetalle({ cultivos }) {
 
   return (
     <main className="cv-detalle-page">
-      <div className="cv-detalle-hero">
-        <img src={cultivo.image} alt={cultivo.title} className="cv-detalle-hero__img" style={cultivo.imagePosition ? { objectPosition: cultivo.imagePosition } : {}} />
-        <div className="cv-detalle-hero__overlay" />
-        <div className="cv-detalle-hero__content">
-          <span className="cv-detalle-hero__category">{cultivo.category}</span>
-          <h1 className="cv-detalle-hero__title">{cultivo.title}</h1>
+      <div className="cv-detalle-card">
+        <div className="cv-detalle-hero">
+          <img src={cultivo.image} alt={cultivo.title} className="cv-detalle-hero__img"
+            style={cultivo.imagePosition ? { objectPosition: cultivo.imagePosition } : {}} />
+          <div className="cv-detalle-hero__overlay" />
+          <div className="cv-detalle-hero__content">
+            <span className="cv-detalle-hero__category">{cultivo.category}</span>
+            <h1 className="cv-detalle-hero__title">{cultivo.title}</h1>
+          </div>
         </div>
-      </div>
-
-      <div className="container">
         <div className="cv-detalle-body">
           <p className="cv-detalle-descripcion">{cultivo.detalle}</p>
           <div className="cv-detalle-actions">

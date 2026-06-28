@@ -4,7 +4,6 @@ import '../styles/ServicioDetalle.css'
 
 // muestra el detalle de un servicio, si tiene subservicios los muestra como cards
 function ServicioDetalle({ servicios }) {
-  // uso useParams para obtener el id de la URL
   const { servicioId, subservicioId } = useParams()
   const servicio = servicios.find((s) => s.id === servicioId)
 
@@ -25,15 +24,16 @@ function ServicioDetalle({ servicios }) {
     if (sub) {
       return (
         <main className="cv-detalle-page">
-          <div className="cv-detalle-hero">
-            <img src={sub.image} alt={sub.title} className="cv-detalle-hero__img" />
-            <div className="cv-detalle-hero__overlay" />
-            <div className="cv-detalle-hero__content">
-              <span className="cv-detalle-hero__category">{servicio.title}</span>
-              <h1 className="cv-detalle-hero__title">{sub.title}</h1>
+          <div className="cv-detalle-card">
+            <div className="cv-detalle-hero">
+              <img src={sub.image} alt={sub.title} className="cv-detalle-hero__img"
+                style={sub.imagePosition ? { objectPosition: sub.imagePosition } : {}} />
+              <div className="cv-detalle-hero__overlay" />
+              <div className="cv-detalle-hero__content">
+                <span className="cv-detalle-hero__category">{servicio.title}</span>
+                <h1 className="cv-detalle-hero__title">{sub.title}</h1>
+              </div>
             </div>
-          </div>
-          <div className="container">
             <div className="cv-detalle-body">
               <p className="cv-detalle-descripcion">{sub.detalle}</p>
               <div className="cv-detalle-actions">
@@ -47,37 +47,27 @@ function ServicioDetalle({ servicios }) {
     }
   }
 
-  // si el servicio tiene subservicios los muestro como cards clickeables
+  // si el servicio tiene subservicios los muestro como cards
   if (servicio.subservicios) {
     return (
       <main className="cv-detalle-page">
-        <div className="cv-detalle-hero">
-          <img src={servicio.image} alt={servicio.title} className="cv-detalle-hero__img" style={servicio.imagePosition ? { objectPosition: servicio.imagePosition } : {}} />
-          <div className="cv-detalle-hero__overlay" />
-          <div className="cv-detalle-hero__content">
-            <span className="cv-detalle-hero__category">{servicio.category}</span>
-            <h1 className="cv-detalle-hero__title">{servicio.title}</h1>
+        <div className="cv-detalle-card">
+          <div className="cv-detalle-hero">
+            <img src={servicio.image} alt={servicio.title} className="cv-detalle-hero__img"
+              style={servicio.imagePosition ? { objectPosition: servicio.imagePosition } : {}} />
+            <div className="cv-detalle-hero__overlay" />
+            <div className="cv-detalle-hero__content">
+              <span className="cv-detalle-hero__category">{servicio.category}</span>
+              <h1 className="cv-detalle-hero__title">{servicio.title}</h1>
+            </div>
           </div>
-        </div>
-
-        <div className="container">
           <div className="cv-detalle-body">
             <p className="cv-detalle-descripcion">{servicio.detalle}</p>
-
             <div className="cv-subservicios-grid">
               {servicio.subservicios.map((sub) => (
-                <Link
-                  key={sub.id}
-                  to={`/servicios/${servicio.id}/${sub.id}`}
-                  className="cv-subservicio-card"
-                >
+                <Link key={sub.id} to={`/servicios/${servicio.id}/${sub.id}`} className="cv-subservicio-card">
                   <div className="cv-subservicio-card__image-wrapper">
-                    <img
-                      src={sub.image}
-                      alt={sub.title}
-                      className="cv-subservicio-card__image"
-                      loading="lazy"
-                    />
+                    <img src={sub.image} alt={sub.title} className="cv-subservicio-card__image" loading="lazy" />
                     <div className="cv-subservicio-card__overlay" />
                   </div>
                   <div className="cv-subservicio-card__body">
@@ -88,7 +78,6 @@ function ServicioDetalle({ servicios }) {
                 </Link>
               ))}
             </div>
-
             <div className="cv-detalle-actions">
               <Link to="/servicios" className="cv-btn cv-btn--outline">← Volver a servicios</Link>
             </div>
@@ -101,15 +90,16 @@ function ServicioDetalle({ servicios }) {
   // servicio simple sin subservicios
   return (
     <main className="cv-detalle-page">
-      <div className="cv-detalle-hero">
-        <img src={servicio.image} alt={servicio.title} className="cv-detalle-hero__img" />
-        <div className="cv-detalle-hero__overlay" />
-        <div className="cv-detalle-hero__content">
-          <span className="cv-detalle-hero__category">{servicio.category}</span>
-          <h1 className="cv-detalle-hero__title">{servicio.title}</h1>
+      <div className="cv-detalle-card">
+        <div className="cv-detalle-hero">
+          <img src={servicio.image} alt={servicio.title} className="cv-detalle-hero__img"
+            style={servicio.imagePosition ? { objectPosition: servicio.imagePosition } : {}} />
+          <div className="cv-detalle-hero__overlay" />
+          <div className="cv-detalle-hero__content">
+            <span className="cv-detalle-hero__category">{servicio.category}</span>
+            <h1 className="cv-detalle-hero__title">{servicio.title}</h1>
+          </div>
         </div>
-      </div>
-      <div className="container">
         <div className="cv-detalle-body">
           <p className="cv-detalle-descripcion">{servicio.detalle}</p>
           <div className="cv-detalle-actions">
