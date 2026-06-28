@@ -33,7 +33,7 @@ function Home({ title, subtitle, description, heroImage }) {
             {[
               { value: '+200', label: 'Productores asesorados' },
               { value: '15 años', label: 'De experiencia en el campo' },
-              { value: '8 pcias', label: 'De presencia nacional' },
+              { value: '8 provincias', label: 'De presencia nacional' },
               { value: '100%', label: 'Compromiso con la tierra' },
             ].map((stat) => (
               <div className="cv-stat" key={stat.label}>
