@@ -111,7 +111,7 @@ export const serviciosData = [
   {
     id: 'agricultura-de-precision',
     title: 'Agricultura de precisión',
-    imagePosition: 'center 50%',
+    imagePosition: 'center 30%',
     category: 'Tecnología',
     description: 'Drones, sensores remotos y mapas de rendimiento para decisiones basadas en datos.',
     detalle: 'Implementamos tecnologías de agricultura de precisión: NDVI satelital, sensores de humedad, mapas de rendimiento y prescripciones de insumos variables. Transformamos los datos del campo en decisiones concretas que mejoran la rentabilidad.',
