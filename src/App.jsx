@@ -143,7 +143,7 @@ const homeData = {
 }
 
 function App() {
-  // Scroll al tope en cada cambio de ruta
+  // Scroll hasta arriba de todo o al inicio en cada cambio de ruta o pagina
   useScrollToTop()
 
   return (
