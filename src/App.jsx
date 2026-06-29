@@ -138,7 +138,7 @@ const galeriaImagenes = [
 const homeData = {
   title: 'El campo que nos alimenta',
   subtitle: 'Asesoramiento agropecuario profesional',
-  description: 'Acompañamos productores rurales argentinos con tecnología, experiencia y pasión por la tierra. Desde la semilla hasta el mercado.',
+  description: 'Acompañamos a productores rurales argentinos con tecnología, experiencia y pasión por la tierra. Desde la semilla hasta el mercado.',
   heroImage: '/img/Imagenfondo.jpg',
 }
 
