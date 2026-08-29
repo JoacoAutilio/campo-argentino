@@ -71,13 +71,13 @@ erDiagram
 ## 3. Justificación de embeber vs. referenciar
 
 **`tipoCultivo` se referencia (no se embebe) desde `Lotes`.**
-El catálogo de cultivos (soja, maíz, trigo, girasol...) es un conjunto acotado de valores que se repite en cientos de lotes distintos. Si embebiéramos el objeto cultivo completo dentro de cada Lote, estaríamos duplicando la misma información (ciclo de días, época de siembra) en cada documento. Si mañana se corrige el `cicloDiasPromedio` de la soja, con referencia se actualiza **un solo documento** en `CultivosCatalogo`; embebido, habría que actualizar cada Lote uno por uno. Además el catálogo se consulta de forma independiente (por ejemplo, para poblar un combo en el formulario de alta de lote).
+El tipo de cultivo se referencia y no se embebe porque es un conjunto chico de valores, soja, maíz, trigo, girasol, que se repite en un montón de lotes distintos. Si copiara los datos completos del cultivo dentro de cada lote, estaría duplicando la misma información una y otra vez. En cambio, guardando solo el ID de referencia, si mañana cambia el ciclo de días de la soja, lo corrijo en un solo lugar, el catálogo, y automáticamente queda actualizado para todos los lotes que la usan. Además, el catálogo también sirve para otras cosas por sí solo, como llenar el desplegable de opciones cuando alguien da de alta un lote nuevo.
 
 **`productor` y `asesor` se referencian desde `Lotes` y `VisitasTecnicas`.**
-Un Usuario existe de forma independiente del Lote o la Visita: el mismo productor tiene varios lotes, el mismo asesor hace varias visitas, y sus datos (email, teléfono) se consultan y actualizan por fuera de ambas colecciones. Embeberlos duplicaría datos personales en cada documento y los desincronizaría en cuanto el usuario cambie su teléfono o email.
+Con el productor pasa lo mismo. Se referencia porque un mismo productor puede tener muchos lotes a la vez, entonces guardar solo su ID evita duplicar sus datos personales, nombre, email, teléfono, en cada lote que tiene. Y si el productor cambia de teléfono o de email, lo actualiza una sola vez en su usuario y ya se refleja en todos sus lotes sin tocar nada más.
 
 **`ubicacion` sí se embebe dentro de `Lotes`.**
-A diferencia del cultivo, la ubicación (provincia, localidad, coordenadas) es un dato que **no se reutiliza en ningún otro lado**: pertenece exclusivamente a ese lote, no se comparte entre lotes distintos, y siempre se lee junto con el resto del documento del Lote (no tiene sentido consultarla de forma aislada). Embeberla evita un `populate`/`join` innecesario para un dato que en el 100% de los casos se usa junto a su padre.
+Con la ubicación es al revés, y por eso ahí sí se embebe. La provincia, la localidad y las coordenadas de un lote son un dato que le pertenece únicamente a ese lote, no se comparte con ningún otro documento, y siempre que consultás un lote necesitás ver junto su ubicación, no tiene sentido pedirla por separado. Entonces embeberla te ahorra tener que hacer una consulta extra para juntar esos datos, porque ya vienen incluidos en el mismo documento del lote.
 
 ---
 
@@ -102,11 +102,11 @@ A diferencia del cultivo, la ubicación (provincia, localidad, coordenadas) es u
 [
   {
     "_id": "652f1a1b2c3d4e5f60000001",
-    "nombre": "Marcos Beltrán",
-    "email": "marcos.beltran@campoargentino.com",
+    "nombre": "Jose Autilio",
+    "email": "joseautilio@campoargentino.com",
     "passwordHash": "$2b$10$examplehash01",
     "rol": "productor",
-    "telefono": "+54 9 11 5555-0001",
+    "telefono": "+54 9 11 1234-0001",
     "fechaRegistro": "2026-02-10T00:00:00Z"
   },
   {
@@ -115,16 +115,16 @@ A diferencia del cultivo, la ubicación (provincia, localidad, coordenadas) es u
     "email": "lucia.fernandez@campoargentino.com",
     "passwordHash": "$2b$10$examplehash02",
     "rol": "productor",
-    "telefono": "+54 9 341 555-0002",
+    "telefono": "+54 9 11 1234-0002",
     "fechaRegistro": "2026-03-02T00:00:00Z"
   },
   {
     "_id": "652f1a1b2c3d4e5f60000003",
-    "nombre": "Ing. Agr. Diego Ríos",
-    "email": "diego.rios@campoargentino.com",
+    "nombre": "Ing. Agr. Leo Messi",
+    "email": "leo.messi@campoargentino.com",
     "passwordHash": "$2b$10$examplehash03",
     "rol": "asesor",
-    "telefono": "+54 9 351 555-0003",
+    "telefono": "+54 9 11 1234-0003",
     "fechaRegistro": "2026-01-20T00:00:00Z"
   },
   {
@@ -133,7 +133,7 @@ A diferencia del cultivo, la ubicación (provincia, localidad, coordenadas) es u
     "email": "admin@campoargentino.com",
     "passwordHash": "$2b$10$examplehash04",
     "rol": "admin",
-    "telefono": "+54 9 11 5555-0004",
+    "telefono": "+54 9 11 1234-0004",
     "fechaRegistro": "2026-01-01T00:00:00Z"
   }
 ]
@@ -180,7 +180,7 @@ A diferencia del cultivo, la ubicación (provincia, localidad, coordenadas) es u
 [
   {
     "_id": "652f1a1b2c3d4e5f60002001",
-    "nombreLote": "Lote El Trébol",
+    "nombreLote": "Lote 1",
     "ubicacion": {
       "provincia": "Santa Fe",
       "localidad": "Cañada de Gómez",
@@ -195,7 +195,7 @@ A diferencia del cultivo, la ubicación (provincia, localidad, coordenadas) es u
   },
   {
     "_id": "652f1a1b2c3d4e5f60002002",
-    "nombreLote": "Lote La Esperanza",
+    "nombreLote": "Lote 2",
     "ubicacion": {
       "provincia": "Córdoba",
       "localidad": "Marcos Juárez",
@@ -210,7 +210,7 @@ A diferencia del cultivo, la ubicación (provincia, localidad, coordenadas) es u
   },
   {
     "_id": "652f1a1b2c3d4e5f60002003",
-    "nombreLote": "Lote Don Alberto",
+    "nombreLote": "Lote 3",
     "ubicacion": {
       "provincia": "Buenos Aires",
       "localidad": "Pergamino",
@@ -225,7 +225,7 @@ A diferencia del cultivo, la ubicación (provincia, localidad, coordenadas) es u
   },
   {
     "_id": "652f1a1b2c3d4e5f60002004",
-    "nombreLote": "Lote San Isidro",
+    "nombreLote": "Lote 4",
     "ubicacion": {
       "provincia": "Santa Fe",
       "localidad": "Venado Tuerto",
@@ -252,7 +252,7 @@ A diferencia del cultivo, la ubicación (provincia, localidad, coordenadas) es u
     "fecha": "2026-08-05T14:00:00Z",
     "estadoCultivoObservado": "Emergencia pareja, sin plagas visibles",
     "observaciones": "Suelo con buena humedad tras las últimas lluvias.",
-    "recomendaciones": "Monitorear en 15 días por posible presencia de orugas."
+    "recomendaciones": "Monitorear en 15 días por posible presencia de chinches."
   },
   {
     "_id": "652f1a1b2c3d4e5f60003002",
