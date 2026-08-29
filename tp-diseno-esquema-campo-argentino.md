@@ -283,3 +283,4 @@ Con la ubicación es al revés, y por eso ahí sí se embebe. La provincia, la l
   }
 ]
 ```
+![Diagrama del modelo en MongoDB Compass](campo_argentino.png)
