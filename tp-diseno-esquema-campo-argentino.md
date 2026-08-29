@@ -182,9 +182,9 @@ Con la ubicación es al revés, y por eso ahí sí se embebe. La provincia, la l
     "_id": "652f1a1b2c3d4e5f60002001",
     "nombreLote": "Lote 1",
     "ubicacion": {
-      "provincia": "Santa Fe",
-      "localidad": "Cañada de Gómez",
-      "coordenadas": { "lat": -32.8256, "lng": -61.4023 }
+      "provincia": "Buenos Aires",
+      "localidad": "General Belgrano",
+      "coordenadas": { "lat": -35.818324, "lng": -58.666912 }
     },
     "hectareas": 85,
     "productor": "652f1a1b2c3d4e5f60000001",
@@ -197,9 +197,9 @@ Con la ubicación es al revés, y por eso ahí sí se embebe. La provincia, la l
     "_id": "652f1a1b2c3d4e5f60002002",
     "nombreLote": "Lote 2",
     "ubicacion": {
-      "provincia": "Córdoba",
-      "localidad": "Marcos Juárez",
-      "coordenadas": { "lat": -32.6997, "lng": -62.1043 }
+      "provincia": "Buenos Aires",
+      "localidad": "General Belgrano",
+      "coordenadas": { "lat": -35.812180, "lng": -58.674770 }
     },
     "hectareas": 120,
     "productor": "652f1a1b2c3d4e5f60000001",
@@ -213,8 +213,8 @@ Con la ubicación es al revés, y por eso ahí sí se embebe. La provincia, la l
     "nombreLote": "Lote 3",
     "ubicacion": {
       "provincia": "Buenos Aires",
-      "localidad": "Pergamino",
-      "coordenadas": { "lat": -33.8969, "lng": -60.5735 }
+      "localidad": "General Belgrano",
+      "coordenadas": { "lat": -35.818485, "lng": -58.678767 }
     },
     "hectareas": 60,
     "productor": "652f1a1b2c3d4e5f60000002",
@@ -227,9 +227,9 @@ Con la ubicación es al revés, y por eso ahí sí se embebe. La provincia, la l
     "_id": "652f1a1b2c3d4e5f60002004",
     "nombreLote": "Lote 4",
     "ubicacion": {
-      "provincia": "Santa Fe",
-      "localidad": "Venado Tuerto",
-      "coordenadas": { "lat": -33.7461, "lng": -61.9689 }
+      "provincia": "Buenos Aires",
+      "localidad": "General Belgrano",
+      "coordenadas": { "lat": -35.808063, "lng": -58.682944 }
     },
     "hectareas": 45,
     "productor": "652f1a1b2c3d4e5f60000002",
