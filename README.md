@@ -167,6 +167,16 @@ ADMIN_PASSWORD=Admin1234
 
 Para MongoDB Atlas, `MONGO_URI` tiene el formato `mongodb+srv://<usuario>:<password>@<cluster>.mongodb.net/campo_argentino`. Estos valores son de ejemplo: en un entorno real hay que cambiar `JWT_SECRET` y la contraseña del admin.
 
+**Importante:** el `.env` del repositorio es solo de ejemplo. Para usar una base real (por ejemplo MongoDB Atlas) no escribas la URI en ese archivo: pasala como variable de entorno al arrancar. En Git Bash:
+
+```bash
+export MONGO_URI="mongodb+srv://<usuario>:<password>@<cluster>.mongodb.net/campo_argentino"
+npm run seed
+npm start
+```
+
+`dotenv` no pisa las variables de entorno que ya están definidas, así que esta tiene prioridad sobre el valor del `.env`.
+
 ## Autenticación y permisos
 
 Las rutas protegidas requieren el header:
